@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J13Window03Open</title>
+
+    <script>
+        //팝업창의 참조값을 저장하기 위한 전역변수
+        var winObj1;
+
+        function popFirst(){
+            //팝업창을 열고, 참조값을 전역변수에 저장한다. 이 값을 통해 팝업창을 제어
+            //할 수 있다.
+            winObj1=window.open("./pages/popup01.html",
+            "pop1", "width=500, height=300, left=0, top=0")
+        }
+
+        function popClose(){
+            alert("팝업창1을 닫습니다");
+            /* self 대신 팝업창의 참조변수를 사용하면 부모창에서 제어할 수 있다.*/
+            winObj1.close();
+        }
+    </script>
+   
+</head>
+<body>
+    <h2>부모창에서 팝업창 제어하기</h2>
+    <p style="text-align: center;">
+        <button onclick="popFirst();">첫번째 팝업창 열기</button>
+        <button onclick="popClose();">첫번째 팝업창 닫기</button>
+        
+    </p>
+</body>
+</html>
